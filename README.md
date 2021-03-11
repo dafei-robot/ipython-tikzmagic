@@ -15,11 +15,6 @@ Load package by writing
 %load_ext tikzmagic
 ```
 in a notebook cell.
-Call tikz by prepending `%tikz` to a single command, e.g.,
-```
-%tikz \draw (0,0) rectangle (1,1);
-```
-or by starting a cell with `%%tikz`, e.g.,
 ```
 %%tikz
 \draw (0,0) rectangle (1,1);

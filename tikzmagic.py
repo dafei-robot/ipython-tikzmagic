@@ -36,8 +36,7 @@ from shutil import rmtree, copy
 from xml.dom import minidom
 
 from IPython.core.displaypub import publish_display_data
-from IPython.core.magic import (Magics, magics_class, line_magic,
-                                line_cell_magic, needs_local_scope)
+from IPython.core.magic import (Magics, magics_class, cell_magic, needs_local_scope)
 from IPython.testing.skipdoctest import skip_doctest
 from IPython.core.magic_arguments import (
     argument, magic_arguments, parse_argstring
@@ -233,14 +232,10 @@ class TikzMagics(Magics):
         'code',
         nargs='*',
         )
-    @line_cell_magic
+    @cell_magic
     def tikz(self, line, cell=None, local_ns=None):
         '''
         Run TikZ code in LaTeX and plot result.
-
-            In [9]: %tikz \draw (0,0) rectangle (1,1);
-
-        As a cell, this will run a block of TikZ code::
 
             In [10]: %%tikz
                ....: \draw (0,0) rectangle (1,1);
