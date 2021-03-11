@@ -14,7 +14,7 @@ Load package by writing
 ```
 %load_ext tikzmagic
 ```
-in a notebook cell.
+in a notebook cell. Starting a cell with %%tikz, e.g.,
 ```
 %%tikz
 \draw (0,0) rectangle (1,1);
